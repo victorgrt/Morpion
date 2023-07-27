@@ -6,7 +6,7 @@
 /*   By: victor <victor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:08:09 by victor            #+#    #+#             */
-/*   Updated: 2023/07/25 15:26:21 by victor           ###   ########.fr       */
+/*   Updated: 2023/07/27 13:20:47 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_game
     char    player1;
     char    player2;
     int     points;
+    char    **p1_tab;
+    char    **p2_tab;
 }	t_game;
 
 

@@ -6,7 +6,7 @@
 #    By: victor <victor@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 14:05:57 by victor            #+#    #+#              #
-#    Updated: 2023/07/25 15:26:54 by victor           ###   ########.fr        #
+#    Updated: 2023/07/27 13:15:47 by victor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,14 +36,14 @@ CURSIVE='\033[3m'
 BOLD='\033[1m'
 BLUE='\033[0;34m'
 
-all: ${NAME}
+all: ${NAME} title usage
 
 ${NAME} : ${OBJ}
 	@echo ${BOLD} ${GRAY} "○	Making LIBFT..." ${NONE}
 	@make -C src/Libft/libft
 	@echo ${BOLD} ${BLUE} "\033[1m○	Compiling files..." ${NONE}
 	$(CC) ${OBJ} ${CCFLAGS} ./src/Libft/libft/libft.a -o $@ -lreadline
-	@echo ${BOLD} ${GREEN} "‣	Compiled !\n" ${NONE}
+	@echo ${BOLD} ${GREEN} "‣	Compiled !" ${NONE}
 
 %.o: %.c
 	@$(CC) ${CCFLAGS} -c $< -o $@
@@ -76,5 +76,11 @@ fclean_util :
 	@${foreach value, $(NAME), echo "\\033[1;31m >> \\033[0;39m" ${value};} 
 	@echo "⣿⣷⡶⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠠⣴⣿⣿⣿⣿⣶⣤⣤⣤\n⠿⠥⢶⡏⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣴⣷⣌⢿⣿⣿⣿⣿⣿⣿⣿\n⣍⡛⢷⣠⣿⣿⣿⣿⣿⣟⠻⣯⠽⣿⣿⠟⠁⣠⠿⠿⣿⣿⣎⠻⣿⣿⣿⡿⠟⣿\n⣿⣿⣦⠙⣿⣿⣿⣿⣿⣿⣷⣏⡧⠙⠁⣀⢾⣧    ⠈⣿⡟  ⠙⣫⣵⣶⠇⣋\n⣿⣿⣿⢀⣿⣿⣿⣿⣿⣿⣿⠟⠃⢀⣀⢻⣎⢻⣷⣤⣴⠟  ⣠⣾⣿⢟⣵⡆⢿\n⣿⣯⣄⢘⢻⣿⣿⣿⣿⡟⠁⢀⣤⡙⢿⣴⣿⣷⡉⠉⢀  ⣴⣿⡿⣡⣿⣿⡿⢆\n⠿⣿⣧⣤⡘⢿⣿⣿⠏  ⡔⠉⠉⢻⣦⠻⣿⣿⣶⣾⡟⣼⣿⣿⣱⣿⡿⢫⣾⣿\n⣷⣮⣝⣛⣃⡉⣿⡏  ⣾⣧⡀    ⣿⡇⢘⣿⠋    ⠻⣿⣿⣿⢟⣵⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣌⢧⣴⣘⢿⣿⣶⣾⡿⠁⢠⠿⠁⠜    ⣿⣿⣿⣿⡿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣦⡙⣿⣷⣉⡛⠋    ⣰⣾⣦⣤⣤⣤⣿⢿⠟⢋⣴⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣌⢿⣿⣿⣿⣿⢰⡿⣻⣿⣿⣿⣿⣿⢃⣰⣫⣾⣿⣿⣿\n⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠿⠿⠿⠛⢰⣾⡿⢟⣭⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 
-title :
-	@echo ${BOLD}${GREEN}" __     __   ___\n|__) | |__) |__  \_/\n|    | |    |___ / \ \n"
+title :                                                                                                    
+	@echo ${BOLD} ${RED}"_____             _         \n|     |___ ___ ___|_|___ ___ \n| | | | . |  _| . | | . |   |\n|_|_|_|___|_| |  _|_|___|_|_|\n              |_|"${NONE}
+
+usage : 
+	@echo ${BOLD}${GREEN}"Usage : ./morpion || ./morpion player1 sign1 player2 sign2\nHave fun !" ${NONE}
+
+                                                                                                        
+
